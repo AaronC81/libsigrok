@@ -135,6 +135,7 @@ The following drivers/devices do not need any firmware upload:
  - openbench-logic-sniffer
  - pce-322a
  - pipistrello-ols
+ - pololu-slo-scope
  - rdtech-dps
  - rigol-ds
  - rohde-schwarz-sme-0x

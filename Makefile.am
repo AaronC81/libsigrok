@@ -515,6 +515,12 @@ src_libdrivers_la_SOURCES += \
 	src/hardware/pipistrello-ols/protocol.c \
 	src/hardware/pipistrello-ols/api.c
 endif
+if HW_POLOLU_SLO_SCOPE
+src_libdrivers_la_SOURCES += \
+	src/hardware/pololu-slo-scope/protocol.h \
+	src/hardware/pololu-slo-scope/protocol.c \
+	src/hardware/pololu-slo-scope/api.c
+endif
 if HW_RDTECH_DPS
 src_libdrivers_la_SOURCES += \
 	src/hardware/rdtech-dps/protocol.h \

@@ -1,3 +1,27 @@
+This is a fork of libsigrok which adds _extremely_ primitive Pololu SLO-scope support.
+
+The Pololu SLO-scope is a very basic oscilliscope included as a bonus feature on the Pololu AVR programmer.
+
+The very basics work, but this has a few big problems:
+
+  1. PulseView hangs on "Stop"
+  2. Only one channel works
+  3. Can't select the "1 analog, 1 digital" mode
+  4. Device isn't freed, so you'll need to disconnect and reconnect USB to use it again
+
+Here's the slightly bodgy process I used to quickly test this:
+
+  1. Install PulseView and its dependencies through your package manager
+  2. Find the version of libsigrok it's using in settings
+  3. Undo the last commit on this repo (which actually adds the SLO-scope support) into your staging
+  4. Checkout the tag for the version of libsigrok your PulseView needs
+  5. Build sigrok as normal, and use `sudo make install` to put it in `/usr/local/lib`
+  6. Run PulseView with `LD_LIBRARY_PATH=/usr/local/lib pulseview`
+
+------------
+
+Here's the original sigrok readme:
+```
 -------------------------------------------------------------------------------
 README
 -------------------------------------------------------------------------------
@@ -159,3 +183,4 @@ Website
 
  http://sigrok.org/wiki/Libsigrok
 
+```
